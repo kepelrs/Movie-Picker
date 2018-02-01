@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Movie Picker</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">MOVIE PICKER</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ratem">RATE MOVIES</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#recommendations">GET RECOMMENDATIONS</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <h1 class="text-uppercase mb-0">Movie Picker App</h1>
+        <img id="profile_pic" class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">This website uses machine learning to suggest movies based on your preferences.<br><br> Like or dislike at least ten movies below to unlock the 'Get Movie Recommendations' button!</h2>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#ratem" id="start-btn">Click to begin!</a>
+      </div>
+    </header>
+
+    <!-- Rate Movie Grid Section -->
+    <section class="ratem" id="ratem">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Rate Movies</h2>
+        <hr class="star-dark mb-5">
+
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div id="movie_info" class="col-md-6">
+            <img id="movie_poster" class="img-fluid shadowed" src="img/loading.gif" alt="">
+            <h3 id="movie_title" movieid="0"></h3>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+
+        <div class="row">
+          <div class="col col-md-3"></div>
+          <div class="col-12 col-md-6">
+            <div id="all_vote_buttons">
+              <div class="vote-btn">
+                <button id="likeBtn" type="button" class="btn btn-success vote-btn fa-for-btns like"></button>
+              </div>
+              <div class="vote-btn">
+                <button id="notWatched" type="button" class="btn vote-btn not-watched fa-for-btns">Not watched</button>
+              </div>
+              <div class="vote-btn">
+                <button id="disikeBtn" type="button" class="btn btn-danger vote-btn dislike fa-for-btns"></button>
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-3"></div>
+        </div>
+
+        <!-- recommend button div -->
+        <div class="row">
+          <div class="col-12" id="recommend-div">
+            <a class="btn btn-warning btn-xl js-scroll-trigger" id="recommend-btn" href="#recommendations">Give me recommendations!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="bg-primary text-white mb-0" id="recommendations">
+      <div class="container">
+        <h2 id="getrec" class="text-center text-uppercase text-white">Get recommendations</h2>
+        <hr class="star-light mb-5">
+        <div class="row" id="rec-row">
+          <div class="col-9 col-md-4 ml-auto mauto-xsmall">
+            <p class="lead" id="para1">Just vote on a few movies and get recommendations!</p>
+            <img id="rec-poster" class="mauto-xsmall img-fluid shadowed_inverse" src="img/loading.gif" alt="">
+          </div>
+          <div class="col-md-4 mr-auto">
+            <p class="lead" id="para2">
+              The more you vote, the better the recommendations.
+            </p>
+            <div id="rec-info">
+              <h3 id="rec-title"></h3>
+              <p><em id="rec-sinopse"></em></p>
+              <a id="rec-link" href="#">Imdb.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a class="btn btn-xl btn-outline-light js-scroll-trigger" href="#ratem" id="next-rec">
+            <i class="fa start-rating"></i>
+            Rate Movies to unlock!
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (under development)-->
+    <section id="contact">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+          <div class="text-center col-lg-8 mx-auto">
+            <p>Soon...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">About this website</h4>
+            <p class="lead mb-0">This website is a one-person Full-Stack project that uses machine learning to find similar ratings and recommend movies. It is created as part of my journey in the <a target="_blank" href="https://www.udacity.com/google-scholarships">Google Front-End Web Dev Challenge Scholarship</a>.</p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Me on the Web</h4>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://github.com/kepelrs" target="_blank">
+                  <i class="fa fa-fw fa-github"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">Copyright disclaimer</h4>
+            <p class="lead mb-0">All Posters and Sinopses in this website are based on
+              <a href="http://imdb.com">IMDB.com</a>. I do not own copyright for those. For the full information on each movie please visit their website.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Davi Barreto 2018</small>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.js"></script>
+
+    <!-- Movie project specific -->
+    <script src="js/controler.js"></script>
+
+  </body>
+
+</html>
