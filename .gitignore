@@ -1,0 +1,8 @@
+*
+!/static
+!/teamplates
+!.gitignore
+!myWebApp.py
+!database_model.py
+!README.md
+!LICENSE

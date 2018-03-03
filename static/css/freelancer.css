@@ -499,3 +499,8 @@ a:focus, a:hover, a:active {
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
     background-color: #0e1013!important;
 }
+
+#progress-bar-div {
+  margin:auto;
+  width: 300px;
+}

@@ -27,6 +27,8 @@ let recRow = $("#rec-row");
 let recTitle = $("#rec-title");
 let recSinopse = $("#rec-sinopse");
 let recLink = $("#rec-link");
+let progressBar = $("#prog-bar-element");
+let progressBarDiv = $("#progress-bar-div");
 
 // dummy posters elements
 let dummy_vote_poster = movie_poster.clone().attr("src", "");
@@ -132,11 +134,37 @@ function voteMovie(num){
 }
 
 // display recommend button when enough votes
+// also animate
 function displayRecommendDiv(){
-    if(Object.keys(user_votes).length >= 10){
+    let vote_count = Object.keys(user_votes).length;
+    animateProgBar(vote_count);
+    if(vote_count >= 10){
         if(recommendDiv.css("display") == "none"){
-            recommendDiv.fadeIn();
+            progressBarDiv.fadeOut(function(){
+                recommendDiv.fadeIn();
+            });
         }
+    }
+}
+
+//animate progress bar
+function animateProgBar(vote_count){
+    progressBar.html((vote_count*10).toString()+"%");
+    if(vote_count == 2){
+        if (progressBar.hasClass("bg-danger")){
+            progressBar.toggleClass("bg-danger");
+            progressBar.toggleClass("bg-warning");
+        }
+    } else if (vote_count == 6){
+        if (progressBar.hasClass("bg-warning")){
+            progressBar.toggleClass("bg-warning");
+        }
+    } else if (vote_count == 10){
+        progressBar.toggleClass("bg-success");
+    }
+
+    if (vote_count > 0){
+        progressBar.css("width", (vote_count*10).toString()+"%");
     }
 }
 

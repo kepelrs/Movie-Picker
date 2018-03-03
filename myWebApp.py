@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 import database_model as d
 from random import shuffle
 import logging
+from datetime import datetime as dt
 
 # setup Flask app
 app = Flask(__name__)
@@ -96,8 +97,9 @@ def find_recomendations(user, target_movies, current_votes):
 
 # Run the program
 if __name__ == "__main__":
+    logfile = 'access' + str(dt.now().day) + '.log'
     logger = logging.getLogger('werkzeug')
-    handler = logging.FileHandler('access.log')
+    handler = logging.FileHandler(logfile)
     logger.addHandler(handler)
     app.logger.addHandler(handler)
     app.run(host="0.0.0.0", port=2020, threaded=True, debug=False)
