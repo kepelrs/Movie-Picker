@@ -494,6 +494,9 @@ a:focus, a:hover, a:active {
   .mauto-xsmall {
     margin: auto;
   }
+  .fixed-top {
+    position: unset;
+  }
 }
 
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
