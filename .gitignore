@@ -6,3 +6,7 @@
 !database_model.py
 !README.md
 !LICENSE
+
+# allow hacky files to be tracked
+!/scrape imdb
+!/scrape imdb/scrapeTop250.py
