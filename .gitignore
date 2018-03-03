@@ -1,5 +1,6 @@
 *
 !/static
+
 !/teamplates
 !.gitignore
 !myWebApp.py
@@ -7,6 +8,6 @@
 !README.md
 !LICENSE
 
-# allow hacky files to be tracked
+# allow temporary hacky solution files to be tracked
 !/scrape imdb
 !/scrape imdb/scrapeTop250.py
