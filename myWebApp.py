@@ -2,7 +2,11 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 import database_model as d
 from random import shuffle
 import logging
+import easy_email
 from datetime import datetime as dt
+
+# backup files
+easy_email.send()
 
 # setup Flask app
 app = Flask(__name__)
