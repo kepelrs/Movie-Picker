@@ -8,3 +8,9 @@ This was created as a part of my journey in the [Google Front-End Web Dev Challe
 
 **[View Live Preview](http://130.204.58.113:3127/)**
 
+### Updating db
+0. Place your existing db in the project's root folder.
+1. Run scraper with `docker-compose up`
+2. `docker run -it movie-picker_pydocker bash`
+
+Db will be updated with new top 250 movies. Old movies will be kept. Images will be refreshed.

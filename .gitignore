@@ -7,6 +7,7 @@
 !database_model.py
 !README.md
 !LICENSE
+!*ocker*
 
 # allow temporary hacky solution files to be tracked
 !/scrape imdb
