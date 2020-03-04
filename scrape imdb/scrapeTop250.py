@@ -3,6 +3,7 @@ import requests
 import database_model as d
 from selenium import webdriver as w
 from time import sleep
+from selenium.webdriver.chrome.options import Options
 
 # start DB
 d.initialize_db()
@@ -69,11 +70,18 @@ def get_high_def_posters(array):
     # higher def links
     posters = []
     # use Selenium, because pages are rendered by JS
-    browser = w.Chrome("C:\\Users\\Kepelrs\\Dropbox\\DAVI\\SCRIPTS\\chromedriver_win32\\chromedriver.exe")
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+
+    browser = w.Chrome(chrome_options=chrome_options)
     browser.get("http://www.google.com")
     sleep(3)
     # iterate over all url's in the array
-    for link in array:
+    for linkIndex, link in enumerate(array):
+        print('Fetching poster ' + str(linkIndex) + ' of ' + str(len(array)))
+
         url = "http://www.imdb.com" + link
         # get page and sleep in order for JS to load
         browser.get(url)

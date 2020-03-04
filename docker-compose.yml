@@ -3,6 +3,6 @@ version: "3.7"
 services:
   pydocker:
     build: .
-    # command: tail -F /app/README.md # Prevents container from exiting
+    command: tail -F /app/README.md # Prevents container from exiting
     volumes:
       - ./:/app
