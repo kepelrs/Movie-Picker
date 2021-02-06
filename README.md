@@ -13,7 +13,7 @@ This was created as a part of my journey in the [Google Front-End Web Dev Challe
 1. Start container with `docker-compose up`
 2. `docker container ls` to find container id (fda47af889c5 in this case)
 2. `docker container exec -it fda47af889c5 bash`
-3. `python scrapeTop250.py`.
+3. `cd scrape\ imdb/ && python3 scrapeTop250.py`.
 
 You can edit files within the container as needed (will update outside files as well)
 

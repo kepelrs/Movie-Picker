@@ -3,6 +3,9 @@ version: "3.7"
 services:
   pydocker:
     build: .
-    command: tail -F /app/README.md # Prevents container from exiting
+    command: python3 myWebApp.py # Prevents container from exiting
+    restart: always
+    ports:
+      - "127.0.0.1:3127:3127"
     volumes:
       - ./:/app

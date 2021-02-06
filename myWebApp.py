@@ -2,11 +2,11 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 import database_model as d
 from random import shuffle
 import logging
-import easy_email
+# import easy_email
 from datetime import datetime as dt
 
 # backup files
-easy_email.send()
+# easy_email.send()
 
 # setup Flask app
 app = Flask(__name__)
@@ -55,7 +55,8 @@ def movie_info():
 def process_votes():
 
     # get user ip, movie ids and vote values
-    ip = request.remote_addr
+    ip = request.environ.get("HTTP_X_FORWARDED_FOR") # for when using nginx/proxy
+    ip = ip if ip else request.remote_addr # for when NOT using nginx/proxy
     movie_ids = [i for i in request.form]
     votes_values = [request.form[i] for i in movie_ids]
     # convert ids to ints

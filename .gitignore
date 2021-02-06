@@ -1,7 +1,7 @@
 *
 !/static
 
-!/teamplates
+!/templates
 !.gitignore
 !myWebApp.py
 !database_model.py

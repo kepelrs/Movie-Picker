@@ -19,10 +19,30 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="../static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="../static/css/freelancer.css" rel="stylesheet">
+
+    <!-- Trackers -->
+	<script
+	  id="Cookiebot"
+	  src="https://consent.cookiebot.com/uc.js"
+	  data-cbid="2805bf7c-9a74-4972-bac1-9c24707faee1"
+	  data-blockingmode="auto"
+	  type="text/javascript"
+	></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90995525-3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-90995525-3');
+	</script>
+
 
   </head>
 
@@ -56,7 +76,7 @@
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <h1 class="text-uppercase mb-0">Movie Picker App</h1>
-        <img id="profile_pic" class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
+        <img id="profile_pic" class="img-fluid mb-5 d-block mx-auto" src="../static/img/profile.png" alt="">
         <hr class="star-light">
         <h2 class="font-weight-light mb-0">This website uses machine learning to suggest movies based on your preferences.<br><br> Like or dislike at least ten movies below to unlock the 'Get Movie Recommendations' button!</h2>
         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#ratem" id="start-btn">Click to begin!</a>
@@ -72,7 +92,7 @@
         <div class="row">
           <div class="col-md-3"></div>
           <div id="movie_info" class="col-md-6">
-            <img id="movie_poster" class="img-fluid shadowed" src="img/loading.gif" alt="">
+            <img id="movie_poster" class="img-fluid shadowed" src="../static/img/loading.gif" alt="">
             <h3 id="movie_title" movieid="0"></h3>
           </div>
           <div class="col-md-3"></div>
@@ -126,7 +146,7 @@
         <div class="row" id="rec-row">
           <div class="col-9 col-md-4 ml-auto mauto-xsmall">
             <p class="lead" id="para1">Just vote on a few movies and get recommendations!</p>
-            <img id="rec-poster" class="mauto-xsmall img-fluid shadowed_inverse" src="img/loading.gif" alt="">
+            <img id="rec-poster" class="mauto-xsmall img-fluid shadowed_inverse" src="../static/img/loading.gif" alt="">
           </div>
           <div class="col-md-4 mr-auto">
             <p class="lead" id="para2">
@@ -149,7 +169,7 @@
     </section>
 
     <!-- Contact Section (under development)-->
-    <section id="contact">
+    <section id="contact" style="display: none">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Contact Me</h2>
         <hr class="star-dark mb-5">
@@ -211,14 +231,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/freelancer.js"></script>
+    <script src="../static/js/freelancer.js"></script>
 
     <!-- Movie project specific -->
-    <script src="js/controler.js"></script>
+    <script src="../static/js/controler.js"></script>
 
   </body>
 
