@@ -172,5 +172,6 @@ top250 = download_and_save("http://www.imdb.com/chart/top", "CurrentPage.html")
 all_movies = scrape_top250(top250)
 
 add_movies_to_db(all_movies)
+d.setup_db()
 
 print("SCRAPING DONE")
