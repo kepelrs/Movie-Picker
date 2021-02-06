@@ -80,7 +80,7 @@ def get_high_def_posters(array):
     sleep(3)
     # iterate over all url's in the array
     for linkIndex, link in enumerate(array):
-        print('Fetching poster ' + str(linkIndex) + ' of ' + str(len(array)))
+        print('Fetching poster ' + str(linkIndex + 1) + ' of ' + str(len(array)))
 
         url = "http://www.imdb.com" + link
         # get page and sleep in order for JS to load
@@ -90,7 +90,8 @@ def get_high_def_posters(array):
         html = browser.execute_script("return document.getElementsByTagName('html')[0].innerHTML")
         pg = bs.BeautifulSoup(html, "html.parser")
         # get img elements
-        matches = pg.find_all(class_="pswp__img")
+        # matches = pg.find_all(class_="pswp__img")
+        matches = pg.find_all("img")
         # get only the ones that have an "alt" attribute
         filtered_matches = []
         for i in matches:
@@ -101,9 +102,9 @@ def get_high_def_posters(array):
             filtered_matches.append(i)
         # select only the main img element if there are multiple matches
         try:
-            poster = filtered_matches[1]["src"]
-        except:
             poster = filtered_matches[0]["src"]
+        except:
+            poster = filtered_matches[1]["src"]
         # store in posters array
         posters.append(poster)
 
