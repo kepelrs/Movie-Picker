@@ -43,8 +43,8 @@ class DBHandler():
         ratings = User.select().where(User.archived == False)
         for i in ratings:
             vote_number = len(i.grades)
-            if vote_number <= number_of_movies:
-                i.grades += "1" * (number_of_movies + 1 - vote_number)
+            if vote_number < number_of_movies:
+                i.grades += "1" * (number_of_movies - vote_number)
                 i.save()
 
     def handle_request(request):
